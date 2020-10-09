@@ -173,3 +173,12 @@ echo "percentage of TTT:" $percentageof_TTT
 echo "percentage of THH:" $percentageof_THH
 echo "percentage of THT:" $percentageof_THT
 echo "percentage of TTH:" $percentageof_TTH
+
+variable=${coin[@]}
+for values in $variable
+do
+	array[count]=$values
+	((count++))
+done
+echo "Array values:" ${array[@]}
+sort=`echo ${array[@]} | awk 'BEGIN{RS=" ";} {print $1}' | sort -n`
